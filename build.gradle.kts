@@ -14,11 +14,13 @@ import org.adligo.kt.jse.core.build.I_CollectionsDeps
 import org.adligo.kt.jse.core.build.I_CtxDeps
 import org.adligo.kt.jse.core.build.I_Ctx4JseDeps
 import org.adligo.kt.jse.core.build.I_GradleCallback
+import org.adligo.kt.jse.core.build.I_MathDeps
 import org.adligo.kt.jse.core.build.I_PipeDeps
 import org.adligo.kt.jse.core.build.I_Tests4jDeps
 import org.adligo.kt.jse.core.build.I_ThreadsDeps
 import org.adligo.kt.jse.core.build.I_Threads4JseDeps
 import org.adligo.kt.jse.core.build.JUnit5Deps
+import org.adligo.kt.jse.core.build.MathDeps
 import org.adligo.kt.jse.core.build.MockitoDeps
 import org.adligo.kt.jse.core.build.MockitoExtDeps
 import org.adligo.kt.jse.core.build.PipeDeps
@@ -123,7 +125,7 @@ fun onEclipseClasspathMerged(classpath: Classpath) {
      //r 
   }
   classpath.entries.add(Container(
-     "org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-8"))
+     "org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-20"))
   
   //println("${classpath.entries::class.qualifiedName}")  
 }
@@ -221,6 +223,12 @@ project(":i_ctx4jse.adligo.org") {
   })
 }
 
+project(":i_math.adligo.org") {
+    projectTemplate(this, { gc -> 
+     //do nothing
+  })
+}
+
 project(":i_pipe.adligo.org") {
     projectTemplate(this, { gc -> 
      //do nothing
@@ -244,6 +252,19 @@ project(":i_threads4jse.adligo.org") {
      I_Threads4JseDeps.has( gc)
   })
 }
+
+project(":math.adligo.org") {
+  projectTemplate(this, { gc -> 
+     MathDeps.has( gc)
+  })
+}
+
+project(":math_tests.adligo.org") {
+  projectTemplate(this, { gc -> 
+     MathDeps.testsHave( gc)
+  })
+}
+
 project(":mockito_ext.adligo.org") {
   projectTemplate(this, { gc -> 
      MockitoExtDeps.has( gc)

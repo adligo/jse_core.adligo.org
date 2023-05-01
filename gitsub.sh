@@ -132,11 +132,14 @@ clone i_bytes.adligo.org
 clone i_collections.adligo.org
 clone i_ctx.adligo.org
 clone i_ctx4jse.adligo.org
+clone i_math.adligo.org
 clone i_pipe.adligo.org
 clone i_tests4j.adligo.org
 clone i_threads.adligo.org
 clone i_threads4jse.adligo.org
 
+clone math.adligo.org
+clone math_tests.adligo.org
 clone mockito_ext.adligo.org
 
 clone pipe.adligo.org
