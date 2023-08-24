@@ -132,6 +132,8 @@ clone i_bytes.adligo.org
 clone i_collections.adligo.org
 clone i_ctx.adligo.org
 clone i_ctx4jse.adligo.org
+clone i_log2.adligo.org
+clone i_log2_tests.adligo.org
 clone i_math.adligo.org
 clone i_pipe.adligo.org
 clone i_tests4j.adligo.org
