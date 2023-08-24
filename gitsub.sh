@@ -154,5 +154,6 @@ clone tests4j_4mockito.adligo.org
 clone tests4j4jj.adligo.org
 clone tests4j4jj_tests.adligo.org
 clone threads.adligo.org
+clone threads_tests.adligo.org
 
 wait

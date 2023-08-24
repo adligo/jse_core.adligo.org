@@ -333,6 +333,11 @@ project(":threads.adligo.org") {
   })
 }
 
+project(":threads_tests.adligo.org") {
+  projectTemplate(this, { gc -> 
+     ThreadsDeps.testsHave(gc)
+  })
+}
 repositories {
   mavenLocal()
   mavenCentral()
