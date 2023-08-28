@@ -58,6 +58,12 @@ hs_err_pid*
 /mockito_ext.adligo.org
 /pipe_tests.adligo.org
 /pipe.adligo.org
+/ten_gwt_examples.adligo.org
+/ten_tests.adligo.org
+/ten.adligo.org
+/ten64_gwt_examples.adligo.org
+/ten64_tests.adligo.org
+/ten64.adligo.org
 /ten64_gwt_examples.adligo.org
 /ten64_tests.adligo.org
 /ten64.adligo.org
@@ -68,3 +74,5 @@ hs_err_pid*
 /threads.adligo.org
 /threads_tests.adligo.org
 /.settings
+/gradlew
+/gradlew.bat

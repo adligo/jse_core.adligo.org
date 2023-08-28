@@ -7,7 +7,7 @@ include(
 "i_bytes.adligo.org",
 "i_collections.adligo.org",
 "i_ctx.adligo.org","i_ctx4jse.adligo.org","i_math.adligo.org",
-"i_pipe.adligo.org","i_tests4j.adligo.org",
+"i_log2.adligo.org","i_pipe.adligo.org","i_tests4j.adligo.org",
 "i_threads.adligo.org","i_threads4jse.adligo.org",
 "math.adligo.org", "math_tests.adligo.org",
 "mockito_ext.adligo.org",

@@ -14,6 +14,8 @@ import org.adligo.kt.jse.core.build.I_CollectionsDeps
 import org.adligo.kt.jse.core.build.I_CtxDeps
 import org.adligo.kt.jse.core.build.I_Ctx4JseDeps
 import org.adligo.kt.jse.core.build.I_GradleCallback
+//import org.adligo.kt.jse.core.build.I_Log
+import org.adligo.kt.jse.core.build.I_Log2
 import org.adligo.kt.jse.core.build.I_MathDeps
 import org.adligo.kt.jse.core.build.I_PipeDeps
 import org.adligo.kt.jse.core.build.I_Tests4jDeps
@@ -68,6 +70,7 @@ println("${this::class.qualifiedName}")
  */
 fun allPlugins(p: Project) {
   p.apply(plugin="java")
+  p.apply(plugin="java-library")
   p.apply(plugin="eclipse")
 }
 
@@ -101,7 +104,7 @@ class GradleBuildCallback(val dhs: DependencyHandlerScope) : I_GradleCallback {
 
 java {
   toolchain {
-    languageVersion.set(JavaLanguageVersion.of(8))
+    languageVersion.set(JavaLanguageVersion.of(20))
   }
 }
 
@@ -224,6 +227,12 @@ project(":i_ctx4jse.adligo.org") {
 }
 
 project(":i_math.adligo.org") {
+    projectTemplate(this, { gc -> 
+     //do nothing
+  })
+}
+
+project(":i_log2.adligo.org") {
     projectTemplate(this, { gc -> 
      //do nothing
   })
