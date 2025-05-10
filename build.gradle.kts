@@ -26,7 +26,7 @@ import org.adligo.kt.jse.core.build.MathDeps
 import org.adligo.kt.jse.core.build.MockitoDeps
 import org.adligo.kt.jse.core.build.MockitoExtDeps
 import org.adligo.kt.jse.core.build.PipeDeps
-import org.adligo.kt.jse.core.build.TenDeps
+import org.adligo.kt.jse.core.build.Ten64Deps
 import org.adligo.kt.jse.core.build.Tests4jDeps
 import org.adligo.kt.jse.core.build.Tests4j_4MockitoDeps
 import org.adligo.kt.jse.core.build.Tests4j4jjDeps
@@ -68,6 +68,7 @@ println("${this::class.qualifiedName}")
  * 
  *         <pre>
  */
+
 fun allPlugins(p: Project) {
   p.apply(plugin="java")
   p.apply(plugin="java-library")
@@ -75,6 +76,7 @@ fun allPlugins(p: Project) {
 }
 
 fun allRepos(r: RepositoryHandler) {
+  r.google()
   r.mavenLocal()
   r.mavenCentral()
 }
@@ -102,12 +104,6 @@ class GradleBuildCallback(val dhs: DependencyHandlerScope) : I_GradleCallback {
   }
 }
 
-java {
-  toolchain {
-    languageVersion.set(JavaLanguageVersion.of(20))
-  }
-}
-
 fun javaSrc(ssc: SourceSetContainer) {
   ssc.main { java { srcDirs("src") } }
 }
@@ -128,7 +124,7 @@ fun onEclipseClasspathMerged(classpath: Classpath) {
      //r 
   }
   classpath.entries.add(Container(
-     "org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-20"))
+     "org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/jdk-24"))
   
   //println("${classpath.entries::class.qualifiedName}")  
 }
@@ -294,21 +290,21 @@ project(":pipe_tests.adligo.org") {
 }
 
 
-project(":ten.adligo.org") {
+project(":ten64.adligo.org") {
   projectTemplate(this, { gc -> 
-     TenDeps.has(gc)
+     Ten64Deps.has(gc)
   })
 }
 
-project(":ten_gwt_examples.adligo.org") {
+project(":ten64_gwt_examples.adligo.org") {
   projectTemplate(this, { gc -> 
-     TenDeps.gwtExamplesHave(gc)
+     Ten64Deps.gwtExamplesHave(gc)
   })
 }
 
-project(":ten_tests.adligo.org") {
+project(":ten64_tests.adligo.org") {
   projectTemplate(this, { gc -> 
-     TenDeps.testsHave(gc)
+     Ten64Deps.testsHave(gc)
   })
 }
 
