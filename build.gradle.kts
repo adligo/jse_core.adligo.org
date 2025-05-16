@@ -212,8 +212,8 @@ project(":i_ctx.adligo.org") {
 }
 
 project(":i_bytes.adligo.org") {
-  projectTemplate(this, { gc -> 
-     //do nothing
+  projectTemplate(this, { gc ->
+      I_BytesDeps.has( gc)
   })
 }
 
@@ -224,8 +224,8 @@ project(":i_ctx4jse.adligo.org") {
 }
 
 project(":i_math.adligo.org") {
-    projectTemplate(this, { gc -> 
-     //do nothing
+    projectTemplate(this, { gc ->
+        I_MathDeps.has( gc)
   })
 }
 
